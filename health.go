@@ -7,9 +7,9 @@ type Health interface {
 	HealthByState(state string) ([]HealthCheck, error)
 }
 
-// [{"Node":{"Node":"drnic.local","Address":"192.168.50.1"},
+// [{"Node":{"Node":"skailhq.local","Address":"192.168.50.1"},
 //  "Service":{"ID":"simple_service","Service":"simple_service","Tags":["tag1","tag2"],"Port":6666},
-//  "Checks":[{"Node":"drnic.local","CheckID":"serfHealth","Name":"Serf Health Status","Status":"passing","Notes":"","Output":"","ServiceID":"","ServiceName":""}]}]
+//  "Checks":[{"Node":"skailhq.local","CheckID":"serfHealth","Name":"Serf Health Status","Status":"passing","Notes":"","Output":"","ServiceID":"","ServiceName":""}]}]
 
 // HealthNodes summarizes the health checks for all Nodes for a single Service
 type HealthNodes []HealthForNode

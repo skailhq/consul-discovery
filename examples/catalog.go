@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/drnic/consul-discovery"
+	"github.com/skailhq/consul-discovery/v2"
 )
 
 func panicIf(err error) {

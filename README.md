@@ -8,7 +8,7 @@ Related: see [consul-kv](https://github.com/armon/consul-kv) for a key-value cli
 Documentation
 -------------
 
-The full documentation is available on [Godoc](http://godoc.org/github.com/drnic/consul-discovery)
+The full documentation is available on [Godoc](http://godoc.org/github.com/skailhq/consul-discovery)
 
 Usage
 -----
@@ -37,8 +37,8 @@ Now the examples can be run on this example local consul node:
 $ go run examples/catalog.go
 Services: consuldiscovery.CatalogServices{consuldiscovery.CatalogService{Name:"consul"...}
 
-consul: consuldiscovery.CatalogServiceByName{consuldiscovery.CatalogServiceNode{Node:"drnic.local"...}
-simple_service: consuldiscovery.CatalogServiceByName{consuldiscovery.CatalogServiceNode{Node:"drnic.local"...}
+consul: consuldiscovery.CatalogServiceByName{consuldiscovery.CatalogServiceNode{Node:"skailhq.local"...}
+simple_service: consuldiscovery.CatalogServiceByName{consuldiscovery.CatalogServiceNode{Node:"skailhq.local"...}
 ```
 
 Development
