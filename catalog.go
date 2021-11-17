@@ -23,7 +23,7 @@ type CatalogService struct {
 type CatalogServiceByName []CatalogServiceNode
 
 // CatalogServiceNode describes a single node of a service
-// From API response:  {"Node":"drnic.local","Address":"192.168.50.1","ServiceID":"simple_service","ServiceName":"simple_service","ServiceTags":["tag1","tag2"],"ServicePort":6666}
+// From API response:  {"Node":"skailhq.local","Address":"192.168.50.1","ServiceID":"simple_service","ServiceName":"simple_service","ServiceTags":["tag1","tag2"],"ServicePort":6666}
 type CatalogServiceNode struct {
 	Node        string
 	Address     string

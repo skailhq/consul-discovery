@@ -6,7 +6,7 @@ import (
 )
 
 func getCurrentNodeName() string {
-	return "drnic.local"
+	return "skailhq.local"
 }
 
 func TestHealth(t *testing.T) {
