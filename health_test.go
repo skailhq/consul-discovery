@@ -2,11 +2,13 @@ package consuldiscovery
 
 import (
 	. "github.com/smartystreets/goconvey/convey"
+	"os"
 	"testing"
 )
 
 func getCurrentNodeName() string {
-	return "skailhq.local"
+	hostName, _ := os.Hostname()
+	return hostName
 }
 
 func TestHealth(t *testing.T) {
@@ -21,7 +23,14 @@ func TestHealth(t *testing.T) {
 		client := getClient(t)
 		checks, err := client.HealthByState("critical")
 		So(err, ShouldEqual, nil)
-		So(len(checks), ShouldEqual, 1)
+		So(len(checks), ShouldNotEqual, 0)
+	})
+
+	Convey("HealthByState", t, func() {
+		client := getClient(t)
+		checks, err := client.HealthByState("passing")
+		So(err, ShouldEqual, nil)
+		So(len(checks), ShouldNotEqual, 0)
 	})
 
 	Convey("HealthByService", t, func() {
@@ -33,8 +42,5 @@ func TestHealth(t *testing.T) {
 		So(node.Service.ServiceID, ShouldEqual, "simple_service")
 		So(node.Service.ServiceName, ShouldEqual, "simple_service")
 		So(len(node.Checks), ShouldEqual, 3)
-		check := node.Checks[0]
-		So(check.Status, ShouldEqual, "passing")
 	})
-
 }

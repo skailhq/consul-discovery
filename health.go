@@ -25,14 +25,21 @@ type HealthForNode struct {
 type HealthNode struct {
 	Node    string
 	Address string
+
+	ID              string
+	Datacenter      string
+	TaggedAddresses map[string]string
 }
 
 // HealthService indicates a service being described by HealthNodes
 type HealthService struct {
-	ServiceID   string   `json:"ID"`
-	ServiceName string   `json:"Service"`
-	ServiceTags []string `json:"Tags"`
-	ServicePort uint64   `json:"Port"`
+	ServiceID              string            `json:"ID"`
+	ServiceName            string            `json:"Service"`
+	ServiceTags            []string          `json:"Tags"`
+	ServicePort            uint64            `json:"Port"`
+	ServiceAddress         string            `json:"Address"`
+	ServiceTaggedAddresses map[string]string `json:"TaggedAddresses"`
+	ServiceMeta            map[string]string `json:"Meta"`
 }
 
 // HealthCheck contains a current health check result
@@ -41,10 +48,14 @@ type HealthCheck struct {
 	CheckID     string
 	Name        string
 	Status      string
-	Nodes       string
+	Notes       string
 	Output      string
 	ServiceID   string
 	ServiceName string
+	ServiceTags []string
+	Type        string
+	Namespace   string
+	Partition   string
 }
 
 // HealthByNode returns the health checks for a specific node
