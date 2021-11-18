@@ -1,9 +1,10 @@
 {
     "check": {
         "id": "check-passing",
-        "name": "Always true",
+        "name": "Always passing",
         "args": [
-            "true"
+            "exit",
+            "0"
         ],
         "interval": "100s"
     }
