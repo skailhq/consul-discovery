@@ -41,6 +41,10 @@ func TestHealth(t *testing.T) {
 		node := nodes[0]
 		So(node.Service.ServiceID, ShouldEqual, "simple_service")
 		So(node.Service.ServiceName, ShouldEqual, "simple_service")
+
+		So(len(node.Service.ServiceTaggedAddresses), ShouldEqual, 2)
+		So(node.Service.ServiceTaggedAddresses["wan"].Address, ShouldEqual, "198.18.0.23")
+		So(node.Service.ServiceTaggedAddresses["wan"].Port, ShouldEqual, 80)
 		So(len(node.Checks), ShouldEqual, 3)
 	})
 }

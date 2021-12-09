@@ -6,6 +6,16 @@
     "service": {
         "name": "simple_service",
         "tags": ["tag1", "tag2"],
-        "port": 6666
+        "port": 6666,
+        "tagged_addresses": {
+            "lan": {
+                "address": "192.168.0.55",
+                "port": 8000
+            },
+            "wan": {
+                "address": "198.18.0.23",
+                "port": 80
+            }
+        }
     }
 }
